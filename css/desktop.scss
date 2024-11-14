@@ -1,0 +1,725 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+
+/* Basic styling for the fixed top navbar */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 200px;
+  color: #fff;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0); /* Transparent background */
+  transition: background-color 0.3s ease-in-out;
+
+  img {
+    height: 40px; /* Adjust logo size as needed */
+  }
+
+  .navbar-menu {
+    display: flex;
+    gap: 50px;
+    justify-content: flex-start;
+    width: 60%;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-family: "Spoqa Han Sans", sans-serif;
+      transition: color 0.3s;
+      font-weight: bold;
+      font-size: 20px;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+
+  .navbar-icon {
+    img {
+      height: 24px; /* Adjust icon size as needed */
+      cursor: pointer;
+    }
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    .navbar-logo {
+      img {
+        height: 25px;
+      }
+    }
+
+    .navbar-menu {
+      display: none;
+    }
+    .navbar-icon {
+      display: none;
+    }
+    .menu-icon {
+      display: inline-block;
+    }
+  }
+}
+
+/* Set basic styling for the hero section */
+.hero {
+  background-image: url("../images/hero.png"); /* Replace with your background image */
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  padding: 100px 200px;
+  height: 100svh;
+  color: #fff;
+
+  h1 {
+    font-size: 120px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+
+  h6 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    line-height: 46px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content {
+    max-width: 600px;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 768px) {
+    background-position: center center;
+    padding: 30px 10px;
+    background-image: url("../images/hero-mobile.png");
+    min-height: 640px;
+    align-items: end;
+    h1 {
+      font-size: 45px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+
+    h6 {
+      font-size: 14px;
+      margin-bottom: 7px;
+      line-height: 16px;
+    }
+
+    p {
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.grid-section {
+  padding: 150px 200px;
+  background-color: #242424;
+  height: 100vh;
+
+  .highlight {
+    color: #f58220 !important;
+  }
+
+  .content-section {
+    h2 {
+      color: #fff;
+      line-height: 60px;
+      font-size: 34px;
+    }
+
+    p {
+      color: #fff;
+      font-weight: 700;
+      font-size: 34px;
+    }
+  }
+
+  .three-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px; /* Space between each grid item */
+    margin-top: 70px;
+
+    .grid-item {
+      text-align: left;
+      box-shadow: none;
+      transition: transform 0.3s;
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        font-size: 1.5em;
+        margin: 10px 0;
+        color: #fff;
+      }
+
+      p {
+        font-size: 1em;
+        color: #7d7d7d;
+        padding-bottom: 20px;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      hr {
+        border: none;
+        height: 2px; /* Set to 1px height to make the hr element invisible */
+        background: transparent;
+        position: relative;
+        margin: 20px auto; /* Center hr with margin */
+
+        &::before,
+        &::after {
+          content: ""; /* Required for the pseudo-element to work */
+          position: absolute;
+          top: 0;
+          height: 3px; /* Thickness of the line */
+        }
+
+        &::before {
+          left: 0;
+          width: 30%; /* 50% of the hr element */
+          background: #f58220; /* Red color for the left half */
+        }
+
+        &::after {
+          right: 0;
+          width: 70%; /* 50% of the hr element */
+          background: #cccccca6; /* Green color for the right half */
+        }
+      }
+    }
+
+    .last {
+      position: relative;
+      top: -40px;
+    }
+
+    .first {
+      position: relative;
+      top: -20px;
+    }
+
+    .middle {
+      position: relative;
+      top: -20px; /* Shift the middle grid 20px down */
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+    height: auto;
+    .dasktop {
+      display: none;
+    }
+    .highlight {
+      color: #f58220 !important;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .content-section {
+      h2 {
+        line-height: 32px;
+        font-size: 20px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 20px;
+      }
+    }
+    .three-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.slider-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      .overlay {
+        position: absolute;
+        background: #24242457;
+        height: 100%;
+        width: 100%;
+
+        .content {
+          padding: 0 200px;
+          text-align: left;
+          color: #fff;
+          height: 100%;
+          width: 70%;
+          border-radius: 8px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          h2 {
+            font-size: 80px;
+            margin-bottom: 10px;
+            line-height: 80px;
+            padding-bottom: 200px;
+          }
+
+          hr {
+            border: none;
+            height: 2px; /* Set to 1px height to make the hr element invisible */
+            background: transparent;
+            position: relative;
+            margin: 20px auto; /* Center hr with margin */
+
+            &::before,
+            &::after {
+              content: ""; /* Required for the pseudo-element to work */
+              position: absolute;
+              top: 0;
+              height: 4px; /* Thickness of the line */
+            }
+
+            &::before {
+              left: 0;
+              width: 30%; /* 50% of the hr element */
+              background: #fff; /* Red color for the left half */
+            }
+
+            &::after {
+              right: 0;
+              width: 70%; /* 50% of the hr element */
+              background: #cccccca6; /* Green color for the right half */
+            }
+          }
+
+          p {
+            font-size: 1.2em;
+          }
+
+          button {
+            margin-top: 20px;
+            background: transparent;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            padding: 15px 40px;
+            color: #ffffff;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+
+    .dot {
+      width: 22px;
+      height: 4px;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &.active {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.two-grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 150px 200px;
+  min-height: 100vh;
+  height: 100%;
+
+  .grid-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+
+    .slider2 {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .slide {
+        min-width: 100%; // Ensure each slide takes full width of the slider
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        img {
+          width: 100%;
+          height: auto;
+          margin-bottom: 10px;
+        }
+
+        .title {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #333;
+          margin: 10px 0;
+        }
+
+        .description {
+          font-size: 1rem;
+          color: #666;
+          text-align: left;
+          margin-left: 20px;
+          margin-bottom: 20px;
+        }
+        p {
+          color: #666;
+        }
+      }
+
+      .nav {
+        position: absolute;
+        top: 37%;
+        transform: translateY(-50%);
+        background: #f1f1f180;
+        color: #fff;
+        border: none;
+        font-size: 1.5rem;
+        padding: 10px 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+        border-radius: 50%;
+
+        &.prev {
+          left: 12px;
+        }
+
+        &.next {
+          right: 12px;
+        }
+
+        &:hover {
+          background: rgb(255, 255, 255);
+          color: #eee;
+        }
+      }
+    }
+
+    .content {
+      flex: 1;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+
+        .text {
+          font-size: 40px;
+          font-weight: bold;
+          color: #2c2c2c;
+        }
+
+        .plus-button {
+          background: none;
+          border: 2px solid #00427a;
+          border-radius: 50%;
+          font-size: 1.5rem;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #00427a;
+          cursor: pointer;
+          transition: background 0.3s, color 0.3s;
+
+          &:hover {
+            background: #333;
+            color: #fff;
+          }
+        }
+      }
+
+      .title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+        margin: 10px 0 5px;
+      }
+
+      .right-title {
+        color: #00427a;
+        font-size: 28px;
+      }
+
+      .right-description {
+        color: #00427a;
+        font-size: 17px;
+      }
+
+      .right-time {
+        color: #00427a;
+        font-size: 15px;
+        margin-top: 20px;
+      }
+
+      .description {
+        font-size: 1rem;
+        color: #666;
+      }
+    }
+  }
+}
+
+.avenue-section {
+  text-align: center;
+  background-color: #242424;
+  min-height: 100vh;
+  align-items: center;
+  padding: 70px 0;
+
+  .content {
+    margin-bottom: 20px;
+
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #777;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-areas: "item1 item2 item3 item4 item5";
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    align-items: center;
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+
+      &.small {
+        height: auto;
+      }
+
+      &.large {
+        width: 550px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.headquater {
+  background-image: url("./../images/headoffice.png");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  padding: 100px 200px;
+  height: 1000px;
+  color: #fff;
+}
+
+.footer {
+  padding: 80px 200px;
+  background-color: #333;
+  color: #fff;
+  min-height: 480px;
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .footer-grid-item {
+      padding: 10px;
+
+      &.left {
+        text-align: left;
+        color: #fff;
+        h2 {
+          font-size: 28px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+
+        h6 {
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 21px;
+        }
+
+        p {
+          font-size: 16px;
+          padding-top: 190px;
+        }
+      }
+
+      &.right {
+        text-align: right;
+
+        .item {
+          display: flex;
+          justify-content: flex-end;
+          gap: 20px;
+          align-items: center;
+          select {
+            background-color: transparent;
+            color: #fff;
+            padding: 8px 16px 7px 12px;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+          }
+        }
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #ddd;
+        }
+      }
+    }
+  }
+}
+
+// Vertical Buttons
+.vertical-buttons {
+  position: fixed;
+  top: 70%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 1;
+  transition: opacity 0.3s;
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .active {
+    background: #00427a !important;
+    color: #ffffff !important;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    background-color: #ffffff;
+    color: #00427a;
+    border: none;
+    border-radius: 8px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border: 1px solid #00427a;
+
+    &:hover {
+      background-color: #555;
+      transform: scale(1.1);
+      color: #ffffff;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
+
+  .back-to-top {
+    background-color: #007bff;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+.section {
+  height: 100vh; // Each section takes full viewport height for easy scrolling
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
+}

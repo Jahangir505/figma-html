@@ -1,0 +1,632 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+
+/* Basic styling for the fixed top navbar */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 200px;
+  color: #fff;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0); /* Transparent background */
+  transition: background-color 0.3s ease-in-out;
+}
+.navbar img {
+  height: 40px; /* Adjust logo size as needed */
+}
+.navbar .navbar-menu {
+  display: flex;
+  gap: 50px;
+  justify-content: flex-start;
+  width: 60%;
+}
+.navbar .navbar-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Spoqa Han Sans", sans-serif;
+  transition: color 0.3s;
+  font-weight: bold;
+  font-size: 20px;
+}
+.navbar .navbar-menu a:hover {
+  color: #007bff;
+}
+.navbar .navbar-icon img {
+  height: 24px; /* Adjust icon size as needed */
+  cursor: pointer;
+}
+.navbar .menu-icon {
+  display: none;
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+  }
+  .navbar .navbar-logo img {
+    height: 25px;
+  }
+  .navbar .navbar-menu {
+    display: none;
+  }
+  .navbar .navbar-icon {
+    display: none;
+  }
+  .navbar .menu-icon {
+    display: inline-block;
+  }
+}
+
+/* Set basic styling for the hero section */
+.hero {
+  background-image: url("../images/hero.png"); /* Replace with your background image */
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  padding: 100px 200px;
+  height: 100svh;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 120px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.hero h6 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  line-height: 46px;
+}
+.hero p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.hero .hero-content {
+  max-width: 600px;
+  margin-left: 20px;
+}
+@media (max-width: 768px) {
+  .hero {
+    background-position: center center;
+    padding: 30px 10px;
+    background-image: url("../images/hero-mobile.png");
+    min-height: 640px;
+    align-items: end;
+  }
+  .hero h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  .hero h6 {
+    font-size: 14px;
+    margin-bottom: 7px;
+    line-height: 16px;
+  }
+  .hero p {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+.grid-section {
+  padding: 150px 200px;
+  background-color: #242424;
+  height: 100vh;
+}
+.grid-section .highlight {
+  color: #f58220 !important;
+}
+.grid-section .content-section h2 {
+  color: #fff;
+  line-height: 60px;
+  font-size: 34px;
+}
+.grid-section .content-section p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 34px;
+}
+.grid-section .three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* Space between each grid item */
+  margin-top: 70px;
+}
+.grid-section .three-grid .grid-item {
+  text-align: left;
+  box-shadow: none;
+  transition: transform 0.3s;
+}
+.grid-section .three-grid .grid-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+.grid-section .three-grid .grid-item h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #fff;
+}
+.grid-section .three-grid .grid-item p {
+  font-size: 1em;
+  color: #7d7d7d;
+  padding-bottom: 20px;
+}
+.grid-section .three-grid .grid-item:hover {
+  transform: scale(1.05);
+}
+.grid-section .three-grid .grid-item hr {
+  border: none;
+  height: 2px; /* Set to 1px height to make the hr element invisible */
+  background: transparent;
+  position: relative;
+  margin: 20px auto; /* Center hr with margin */
+}
+.grid-section .three-grid .grid-item hr::before, .grid-section .three-grid .grid-item hr::after {
+  content: ""; /* Required for the pseudo-element to work */
+  position: absolute;
+  top: 0;
+  height: 3px; /* Thickness of the line */
+}
+.grid-section .three-grid .grid-item hr::before {
+  left: 0;
+  width: 30%; /* 50% of the hr element */
+  background: #f58220; /* Red color for the left half */
+}
+.grid-section .three-grid .grid-item hr::after {
+  right: 0;
+  width: 70%; /* 50% of the hr element */
+  background: rgba(204, 204, 204, 0.6509803922); /* Green color for the right half */
+}
+.grid-section .three-grid .last {
+  position: relative;
+  top: -40px;
+}
+.grid-section .three-grid .first {
+  position: relative;
+  top: -20px;
+}
+.grid-section .three-grid .middle {
+  position: relative;
+  top: -20px; /* Shift the middle grid 20px down */
+}
+@media (max-width: 768px) {
+  .grid-section {
+    padding: 50px 20px;
+    height: auto;
+  }
+  .grid-section .dasktop {
+    display: none;
+  }
+  .grid-section .highlight {
+    color: #f58220 !important;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .grid-section .content-section h2 {
+    line-height: 32px;
+    font-size: 20px;
+  }
+  .grid-section .content-section p {
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .grid-section .three-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.slider-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.slider-section .slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+.slider-section .slider .slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.slider-section .slider .slide .overlay {
+  position: absolute;
+  background: rgba(36, 36, 36, 0.3411764706);
+  height: 100%;
+  width: 100%;
+}
+.slider-section .slider .slide .overlay .content {
+  padding: 0 200px;
+  text-align: left;
+  color: #fff;
+  height: 100%;
+  width: 70%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.slider-section .slider .slide .overlay .content h2 {
+  font-size: 80px;
+  margin-bottom: 10px;
+  line-height: 80px;
+  padding-bottom: 200px;
+}
+.slider-section .slider .slide .overlay .content hr {
+  border: none;
+  height: 2px; /* Set to 1px height to make the hr element invisible */
+  background: transparent;
+  position: relative;
+  margin: 20px auto; /* Center hr with margin */
+}
+.slider-section .slider .slide .overlay .content hr::before, .slider-section .slider .slide .overlay .content hr::after {
+  content: ""; /* Required for the pseudo-element to work */
+  position: absolute;
+  top: 0;
+  height: 4px; /* Thickness of the line */
+}
+.slider-section .slider .slide .overlay .content hr::before {
+  left: 0;
+  width: 30%; /* 50% of the hr element */
+  background: #fff; /* Red color for the left half */
+}
+.slider-section .slider .slide .overlay .content hr::after {
+  right: 0;
+  width: 70%; /* 50% of the hr element */
+  background: rgba(204, 204, 204, 0.6509803922); /* Green color for the right half */
+}
+.slider-section .slider .slide .overlay .content p {
+  font-size: 1.2em;
+}
+.slider-section .slider .slide .overlay .content button {
+  margin-top: 20px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 15px 40px;
+  color: #ffffff;
+  font-size: 16px;
+}
+.slider-section .dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+.slider-section .dots .dot {
+  width: 22px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.slider-section .dots .dot.active {
+  background-color: #fff;
+}
+
+.two-grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 150px 200px;
+  min-height: 100vh;
+  height: 100%;
+}
+.two-grid-section .grid-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+.two-grid-section .grid-item .slider2 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.two-grid-section .grid-item .slider2 .slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.two-grid-section .grid-item .slider2 .slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.two-grid-section .grid-item .slider2 .slide img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.two-grid-section .grid-item .slider2 .slide .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+.two-grid-section .grid-item .slider2 .slide .description {
+  font-size: 1rem;
+  color: #666;
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.two-grid-section .grid-item .slider2 .slide p {
+  color: #666;
+}
+.two-grid-section .grid-item .slider2 .nav {
+  position: absolute;
+  top: 37%;
+  transform: translateY(-50%);
+  background: rgba(241, 241, 241, 0.5019607843);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 50%;
+}
+.two-grid-section .grid-item .slider2 .nav.prev {
+  left: 12px;
+}
+.two-grid-section .grid-item .slider2 .nav.next {
+  right: 12px;
+}
+.two-grid-section .grid-item .slider2 .nav:hover {
+  background: rgb(255, 255, 255);
+  color: #eee;
+}
+.two-grid-section .grid-item .content {
+  flex: 1;
+}
+.two-grid-section .grid-item .content .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.two-grid-section .grid-item .content .header .text {
+  font-size: 40px;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+.two-grid-section .grid-item .content .header .plus-button {
+  background: none;
+  border: 2px solid #00427a;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00427a;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.two-grid-section .grid-item .content .header .plus-button:hover {
+  background: #333;
+  color: #fff;
+}
+.two-grid-section .grid-item .content .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0 5px;
+}
+.two-grid-section .grid-item .content .right-title {
+  color: #00427a;
+  font-size: 28px;
+}
+.two-grid-section .grid-item .content .right-description {
+  color: #00427a;
+  font-size: 17px;
+}
+.two-grid-section .grid-item .content .right-time {
+  color: #00427a;
+  font-size: 15px;
+  margin-top: 20px;
+}
+.two-grid-section .grid-item .content .description {
+  font-size: 1rem;
+  color: #666;
+}
+
+.avenue-section {
+  text-align: center;
+  background-color: #242424;
+  min-height: 100vh;
+  align-items: center;
+  padding: 70px 0;
+}
+.avenue-section .content {
+  margin-bottom: 20px;
+}
+.avenue-section .content .title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+.avenue-section .content .subtitle {
+  font-size: 1.2rem;
+  color: #777;
+}
+.avenue-section .grid {
+  display: grid;
+  grid-template-areas: "item1 item2 item3 item4 item5";
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  align-items: center;
+}
+.avenue-section .grid .grid-item {
+  position: relative;
+  overflow: hidden;
+}
+.avenue-section .grid .grid-item.small {
+  height: auto;
+}
+.avenue-section .grid .grid-item.large {
+  width: 550px;
+}
+.avenue-section .grid .grid-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+
+.headquater {
+  background-image: url("./../images/headoffice.png");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  padding: 100px 200px;
+  height: 1000px;
+  color: #fff;
+}
+
+.footer {
+  padding: 80px 200px;
+  background-color: #333;
+  color: #fff;
+  min-height: 480px;
+}
+.footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.footer .footer-grid .footer-grid-item {
+  padding: 10px;
+}
+.footer .footer-grid .footer-grid-item.left {
+  text-align: left;
+  color: #fff;
+}
+.footer .footer-grid .footer-grid-item.left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.footer .footer-grid .footer-grid-item.left h6 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+.footer .footer-grid .footer-grid-item.left p {
+  font-size: 16px;
+  padding-top: 190px;
+}
+.footer .footer-grid .footer-grid-item.right {
+  text-align: right;
+}
+.footer .footer-grid .footer-grid-item.right .item {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+}
+.footer .footer-grid .footer-grid-item.right .item select {
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 16px 7px 12px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.footer .footer-grid .footer-grid-item a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer .footer-grid .footer-grid-item a:hover {
+  color: #ddd;
+}
+
+.vertical-buttons {
+  position: fixed;
+  top: 70%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.vertical-buttons.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.vertical-buttons .active {
+  background: #00427a !important;
+  color: #ffffff !important;
+}
+.vertical-buttons .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+  background-color: #ffffff;
+  color: #00427a;
+  border: none;
+  border-radius: 8px;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  border: 1px solid #00427a;
+}
+.vertical-buttons .btn:hover {
+  background-color: #555;
+  transform: scale(1.1);
+  color: #ffffff;
+}
+.vertical-buttons .btn img {
+  width: 32px;
+  height: 32px;
+}
+.vertical-buttons .btn span {
+  font-size: 12px;
+}
+.vertical-buttons .back-to-top {
+  background-color: #007bff;
+  color: #ffffff;
+}
+.vertical-buttons .back-to-top:hover {
+  background-color: #0056b3;
+}
+
+.section {
+  height: 100vh;
+}
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+  }
+}/*# sourceMappingURL=desktop.css.map */
