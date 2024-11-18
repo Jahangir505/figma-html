@@ -263,11 +263,10 @@
 }
 
 .slider-section {
-  position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-
+  position: relative;
   .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -369,6 +368,33 @@
 
       &.active {
         background-color: #fff;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
+
+    .slider {
+      height: 640px !important;
+
+      .slide {
+        .overlay {
+          .content {
+            padding: 0 20px;
+            width: 100%;
+
+            h2 {
+              font-size: 24px;
+              line-height: 30px;
+              padding-bottom: 100px;
+            }
+
+            p {
+              font-size: 12px;
+            }
+          }
+        }
       }
     }
   }
@@ -521,6 +547,25 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 20px;
+
+    .grid-item {
+      padding: 0;
+
+      .content {
+        display: inline-grid;
+        width: 100%;
+        .header {
+          .text {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
 }
 
 .avenue-section {
@@ -572,6 +617,23 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    min-height: auto;
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "item1 item2 item3";
+
+      .grid-item {
+        &.hide {
+          display: none;
+        }
+        &.large {
+          width: 200px;
+        }
+      }
+    }
+  }
 }
 
 .headquater {
@@ -583,6 +645,10 @@
   padding: 100px 200px;
   height: 1000px;
   color: #fff;
+
+  @media (max-width: 768px) {
+    padding: 100px 120px;
+  }
 }
 
 .footer {
@@ -650,6 +716,38 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    min-height: 280px;
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+
+      .footer-grid-item {
+        &.left {
+          text-align: left;
+          color: #fff;
+          h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+          }
+
+          h6 {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+          }
+
+          p {
+            font-size: 12px;
+            padding-top: 70px;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Vertical Buttons
@@ -712,6 +810,23 @@
 
     &:hover {
       background-color: #0056b3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    right: 10px;
+    .btn {
+      width: 60px;
+      height: 60px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      span {
+        font-size: 9px;
+      }
     }
   }
 }
